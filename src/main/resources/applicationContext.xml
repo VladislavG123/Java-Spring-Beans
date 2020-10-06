@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans  xmlns="http://www.springframework.org/schema/beans"
+
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+        xmlns:context="http://www.springframework.org/schema/context"
+
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+
+         http://www.springframework.org/schema/beans/spring-beans.xsd
+
+         http://www.springframework.org/schema/context
+
+         http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="classicalMusic"
+          class="com.example.demo.ClassicalMusic">
+    </bean>
+
+    <bean id="horrorGame"
+        class="com.example.demo.HorrorGame">
+    </bean>
+
+    <bean id="wheel"
+          class="com.example.demo.beans.Wheel">
+
+        <constructor-arg value="10" />
+    </bean>
+
+    <bean id="transmission"
+        class="com.example.demo.beans.Transmission">
+        <constructor-arg value="6"/>
+    </bean>
+
+    <bean id="engine"
+          class="com.example.demo.beans.Engine">
+        <constructor-arg value="5"/>
+        <constructor-arg type="java.lang.String" value="V8"/>
+    </bean>
+
+    <bean id="car"
+          class="com.example.demo.beans.Car"
+    >
+        <constructor-arg ref="engine"/>
+        <constructor-arg ref="wheel"/>
+        <constructor-arg ref="transmission"/>
+    </bean>
+
+    <bean id="moto"
+          class="com.example.demo.beans.Moto"
+    >
+        <constructor-arg ref="engine"/>
+        <constructor-arg ref="wheel"/>
+
+    </bean>
+
+    <bean id="boat" class="com.example.demo.beans.Boat">
+        <constructor-arg ref="engine"/>
+    </bean>
+
+</beans>
